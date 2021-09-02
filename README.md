@@ -153,7 +153,8 @@ The performance of the code will be measured by how long it takes to execute the
 <p align="center">
 <sub>Figure 1 Execution times for 2017 data in Existing Code</sub>
  </p>
-
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 
 
@@ -161,7 +162,8 @@ The performance of the code will be measured by how long it takes to execute the
 <p align="center">
 <sub>Figure 2 Execution times for 2018 data in Existing Code</sub>
 </p>
-
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 
 
@@ -169,6 +171,8 @@ The performance of the code will be measured by how long it takes to execute the
 <p align="center">
 <sub>Figure 3 Execution times for 2017 data in Refactoring Code</sub>
 </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 
 
@@ -177,6 +181,8 @@ The performance of the code will be measured by how long it takes to execute the
 <p align="center">
 <sub>Figure 4 Execution times for 2018 data in Refactoring Code</sub>
 </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 
 
