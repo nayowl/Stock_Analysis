@@ -155,20 +155,30 @@ The performance of the code will be measured by how long it takes to execute the
  </p>
 
 
+
+
 <img width="960" alt="green_stock_2018" src="https://user-images.githubusercontent.com/88597187/131782894-7e76ecbf-a4fa-4338-a671-902466c26b98.png">
 <p align="center">
 <sub>Figure 2 Execution times for 2018 data in Existing Code</sub>
 </p>
+
+
+
 
 <img width="960" alt="vba_challenge_2017" src="https://user-images.githubusercontent.com/88597187/131782897-ef8491ec-5c5c-4010-90c4-4c9bbf23e1df.png">
 <p align="center">
 <sub>Figure 3 Execution times for 2017 data in Refactoring Code</sub>
 </p>
 
+
+
+
 <img width="960" alt="vba_challenge_2018" src="https://user-images.githubusercontent.com/88597187/131782898-815a55ff-87e7-4dfa-a92c-7be6869fe22c.png">
 <p align="center">
 <sub>Figure 4 Execution times for 2018 data in Refactoring Code</sub>
 </p>
+
+
 
 <p align="center">
 <sub>Table 3 Comparison of Execution Times </sub>
