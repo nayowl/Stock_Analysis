@@ -149,7 +149,8 @@ TickerIndex = 0
 ```
 The performance of the code will be measured by how long it takes to execute the code. Figure 1  and Figure 2 will show us times to execute existing code  for 2017 and 2018 data. While Figure 3 and Figure 4 show execution times for the code after refactoring. For comparison between existing and refactoring code of the execution time we can see it in the Table 3. 
 
-<img width="960" alt="green_stock_2017" src="https://user-images.githubusercontent.com/88597187/131782890-d0646e66-9de5-4107-b02e-61622bf13143.png">
+
+<img width="621" alt="green_stock_2017" src="https://user-images.githubusercontent.com/88597187/131785286-4bc66fc4-dc42-4144-9f75-9d381a6824c0.png">
 <p align="center">
 <sub>Figure 1 Execution times for 2017 data in Existing Code</sub>
  </p>
@@ -157,8 +158,7 @@ The performance of the code will be measured by how long it takes to execute the
 <p>&nbsp;</p>
 
 
-
-<img width="960" alt="green_stock_2018" src="https://user-images.githubusercontent.com/88597187/131782894-7e76ecbf-a4fa-4338-a671-902466c26b98.png">
+<img width="620" alt="green_stock_2018" src="https://user-images.githubusercontent.com/88597187/131785300-53e1c0a3-0e48-43a3-a5ea-f64961952580.png">
 <p align="center">
 <sub>Figure 2 Execution times for 2018 data in Existing Code</sub>
 </p>
@@ -166,8 +166,7 @@ The performance of the code will be measured by how long it takes to execute the
 <p>&nbsp;</p>
 
 
-
-<img width="960" alt="vba_challenge_2017" src="https://user-images.githubusercontent.com/88597187/131782897-ef8491ec-5c5c-4010-90c4-4c9bbf23e1df.png">
+<img width="633" alt="vba_challenge_2017" src="https://user-images.githubusercontent.com/88597187/131785312-f061c89d-d521-4efa-bef2-f366b2b04af1.png">
 <p align="center">
 <sub>Figure 3 Execution times for 2017 data in Refactoring Code</sub>
 </p>
@@ -176,8 +175,7 @@ The performance of the code will be measured by how long it takes to execute the
 
 
 
-
-<img width="960" alt="vba_challenge_2018" src="https://user-images.githubusercontent.com/88597187/131782898-815a55ff-87e7-4dfa-a92c-7be6869fe22c.png">
+<img width="632" alt="vba_challenge_2018" src="https://user-images.githubusercontent.com/88597187/131785319-d43f7216-3959-4fae-a5e4-619c65f1a42b.png">
 <p align="center">
 <sub>Figure 4 Execution times for 2018 data in Refactoring Code</sub>
 </p>
