@@ -45,6 +45,44 @@ The original dataset in the excel contains of two sheet which is 2017 and 2018. 
 |Close|* Starting price if it’s the first data row of each ticker, * Ending Price if it’s the last data row of each ticker|
 |Volume|To calculate total Volume|
 
+The Subroutine AllStocksAnalysis() will be used to calculate and put the data result in excel sheet. The main difference between the existing code and the refactoring code is the usage of arrays to hold volume, starting price and ending price value in the refactoring code instead of nested loop to find the value.
+
+In existing code, to calculate volume and define starting and ending price, we used nested loops. 
+```
+For i = 0 To 11
+            ticker = tickers(i)
+            totalVolume = 0
+            Worksheets(yearValue).Activate
+            
+        For j = 2 To RowCount
+        ' increase totalVolume if the ticker value (row A) is DQ
+        
+            'To count totalvolume
+            If Cells(j, 1) = ticker Then
+                totalVolume = totalVolume + Cells(j, 8).Value
+            End If
+        
+            'To count starting price for Yearly Return
+            If Cells(j - 1, 1) <> ticker And Cells(j, 1) = ticker Then
+                startingPrice = Cells(j, 6).Value
+            End If
+        
+            'To count Ending price for Yearly Return
+            If Cells(j + 1, 1) <> ticker And Cells(j, 1) = ticker Then
+                EndingPrice = Cells(j, 6).Value
+            End If
+            
+        Next j
+        
+        Worksheets("All Stocks Analysis").Activate
+        Cells(4 + i, 1).Value = ticker
+        Cells(4 + i, 2).Value = totalVolume
+        Cells(4 + i, 3).Value = EndingPrice / startingPrice - 1
+        
+    Next i
+
+```
+
 ## 3 Summary
 ### 3.1 Advantages and Disadvantages of Refactoring Code
 ### 3.2 Pros and Cons Refactoring Code in this Project
