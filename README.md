@@ -18,8 +18,9 @@ The existing code works well for calculate the current data since the data size 
 
 The original dataset in the excel contains of two sheet which is 2017 and 2018. Each sheet holds the stock data of the year. Table 1 below describe the summary of data used for analysis. It has 12 Ticker with 251 row data on each ticker. On the dataset there are 8 columns which are ticker, date, open, high, low, close, adj close and volume. Table 2 below will show us the mapping of data column and its usage in analysis, if the column is not present in the table, then it is not used in analysis.  
 
-
+<p align="center">
 <sub>Table 1 Summary of stock Analysis Data</sub>
+</p> 
 
 |Stock Name(Ticker Name) 2017|Data Count 2017|Stock Name(Ticker Name) 2018|Data Count 2018|
 |---|---|---|---|
@@ -37,7 +38,9 @@ The original dataset in the excel contains of two sheet which is 2017 and 2018. 
 |VSLR|251|VSLR|251|
 |Grand Total|3012|Grand Total|3012|
 
+<p align="center">
 <sub>Table 2 Column Usage in Analysis</sub>
+</p>
 
 |Column Name|Usage in Analysis|
 |---|---|
@@ -147,27 +150,35 @@ TickerIndex = 0
 The performance of the code will be measured by how long it takes to execute the code. Figure 1  and Figure 2 will show us times to execute existing code  for 2017 and 2018 data. While Figure 3 and Figure 4 show execution times for the code after refactoring. For comparison between existing and refactoring code of the execution time we can see it in the Table 3. 
 
 <img width="960" alt="green_stock_2017" src="https://user-images.githubusercontent.com/88597187/131782890-d0646e66-9de5-4107-b02e-61622bf13143.png">
+<p align="center">
 <sub>Figure 1 Execution times for 2017 data in Existing Code</sub>
+ </p>
 
 
 <img width="960" alt="green_stock_2018" src="https://user-images.githubusercontent.com/88597187/131782894-7e76ecbf-a4fa-4338-a671-902466c26b98.png">
+<p align="center">
 <sub>Figure 2 Execution times for 2018 data in Existing Code</sub>
-
+</p>
 
 <img width="960" alt="vba_challenge_2017" src="https://user-images.githubusercontent.com/88597187/131782897-ef8491ec-5c5c-4010-90c4-4c9bbf23e1df.png">
+<p align="center">
 <sub>Figure 3 Execution times for 2017 data in Refactoring Code</sub>
-
+</p>
 
 <img width="960" alt="vba_challenge_2018" src="https://user-images.githubusercontent.com/88597187/131782898-815a55ff-87e7-4dfa-a92c-7be6869fe22c.png">
+<p align="center">
 <sub>Figure 4 Execution times for 2018 data in Refactoring Code</sub>
+</p>
 
-
+<p align="center">
 <sub>Table 3 Comparison of Execution Times </sub>
+</p>
 
 |Year|Existing|Refactoring|Difference (Existing-Refactoring)|Reduction in time(Existing- Refactoring)/Existing x100%|Increase in Performance(Existing-Refactoring)/Refactoring x100%|Time multiplication (Existing/Refactoring)|
 |---|---|---|---|---|---|---|
 |2017|2.836|0.375|2.461|86.777|656.267|7.563|
 |2018|2.930|0.195|2.735|93.345|1402.564|15.026|
+
 *The values show in this table are roundup to 3 decimals*
 
 From Table 3 we can see the positive improvement for the code after refactoring. The reduction in time for executing the code is 86.777% and 93.345%. Furthermore, the increase in performance and the multiplication shows us the code is become more efficient. There are 656.267% and 1402.564% increase in performance and the code become 7.563 and 15.026 faster than before the refactoring happened. 
@@ -181,6 +192,7 @@ Advantages:
 - Less complex and easier to read
 - Prevents many future defects
 - May increase performance
+
 Disadvantages:
 - It may introduce bugs
 - Takes times and expensive in budget
