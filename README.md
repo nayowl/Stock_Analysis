@@ -82,7 +82,111 @@ For i = 0 To 11
     Next i
 
 ```
+The First loop ( For i =0 to 11)  is used to loop through the tickers. Tickers is an array that hold all the ticker name. The second loop (nested from the fist loop) (for j=2 to RowCount) is used to loop through rows in the data to find total volume, starting price, and ending price of the ticker from the first loop.  
+
+For the refactoring code, arrays will be used to hold total volume, starting price and ending price of each ticker using ticker index.  There are no nested loops in the refactoring code. First the code creates a loop to initialize ticker volume to zero, then loop through the row using TickerIndex to access the correct index of each ticker to count total volume and define starting and ending price. The ticker index value will be added when the next row ticker doesn’t match with the current ticker
+
+```
+'1a) Create a ticker Index
+     
+TickerIndex = 0
+    
+    '1b) Create three output arrays
+    
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
+    
+    
+    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+    
+     For j = 0 To 11
+            tickerVolumes(j) = 0
+     Next j
+            
+    ''2b) Loop over all the rows in the spreadsheet.
+        For i = 2 To RowCount
+    
+            '3a) Increase volume for current ticker
+        
+                tickerVolumes(TickerIndex) = tickerVolumes(TickerIndex) + Cells(i, 8).Value
+           
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+            
+                If Cells(i - 1, 1) <> tickers(TickerIndex) Then
+                    tickerStartingPrices(TickerIndex) = Cells(i, 6).Value
+        'End If
+                End If
+            
+    
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+        'If  Then
+                If Cells(i + 1, 1) <> tickers(TickerIndex) Then
+                    tickerEndingPrices(TickerIndex) = Cells(i, 6).Value
+        
+            '3d Increase the tickerIndex.
+                    TickerIndex = TickerIndex + 1
+        'End If
+                End If
+        Next i
+            
+            
+    '4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
+        For i = 0 To 11
+        
+            Worksheets("All Stocks Analysis").Activate
+            Cells(4 + i, 1).Value = tickers(i)
+            Cells(4 + i, 2).Value = tickerVolumes(i)
+            Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
+        
+        Next i
+
+```
+The performance of the code will be measured by how long it takes to execute the code. Figure 1  and Figure 2 will show us times to execute existing code  for 2017 and 2018 data. While Figure 3 and Figure 4 show execution times for the code after refactoring. For comparison between existing and refactoring code of the execution time we can see it in the Table 3. 
+
+<img width="960" alt="green_stock_2017" src="https://user-images.githubusercontent.com/88597187/131782890-d0646e66-9de5-4107-b02e-61622bf13143.png">
+<sub>Figure 1 Execution times for 2017 data in Existing Code</sub>
+
+
+<img width="960" alt="green_stock_2018" src="https://user-images.githubusercontent.com/88597187/131782894-7e76ecbf-a4fa-4338-a671-902466c26b98.png">
+<sub>Figure 2 Execution times for 2018 data in Existing Code</sub>
+
+
+<img width="960" alt="vba_challenge_2017" src="https://user-images.githubusercontent.com/88597187/131782897-ef8491ec-5c5c-4010-90c4-4c9bbf23e1df.png">
+<sub>Figure 3 Execution times for 2017 data in Refactoring Code</sub>
+
+
+<img width="960" alt="vba_challenge_2018" src="https://user-images.githubusercontent.com/88597187/131782898-815a55ff-87e7-4dfa-a92c-7be6869fe22c.png">
+<sub>Figure 4 Execution times for 2018 data in Refactoring Code</sub>
+
+
+<sub>Table 3 Comparison of Execution Times </sub>
+
+|Year|Existing|Refactoring|Difference (Existing-Refactoring)|Reduction in time(Existing- Refactoring)/Existing x100%|Increase in Performance(Existing-Refactoring)/Refactoring x100%|Time multiplication (Existing/Refactoring)|
+|---|---|---|---|---|---|---|
+|2017|2.836|0.375|2.461|86.777|656.267|7.563|
+|2018|2.930|0.195|2.735|93.345|1402.564|15.026|
+*The values show in this table are roundup to 3 decimals*
+
+From Table 3 we can see the positive improvement for the code after refactoring. The reduction in time for executing the code is 86.777% and 93.345%. Furthermore, the increase in performance and the multiplication shows us the code is become more efficient. There are 656.267% and 1402.564% increase in performance and the code become 7.563 and 15.026 faster than before the refactoring happened. 
+
 
 ## 3 Summary
+
 ### 3.1 Advantages and Disadvantages of Refactoring Code
+Advantages:
+- The code is easier to enhance and maintain in the future
+- Less complex and easier to read
+- Prevents many future defects
+- May increase performance
+Disadvantages:
+- It may introduce bugs
+- Takes times and expensive in budget
+- Risky if the application is too big and there is not proper test case in existing code
+- Risky if the developer does not understand what’s all about
+
 ### 3.2 Pros and Cons Refactoring Code in this Project
+
+From the result above, it’s clear that refactoring has positive impact on the existing code in this project. Its increase the performance and make the execution time faster. The factor that may lead the improvement is the usage of array instead of nested loops for calculation. For the disadvantage of the refactoring, since we only have two dataset (2017 and 2018) to compare  and doesn’t have another test case it may introduce bugs and will not work as expected.
