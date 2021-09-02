@@ -19,6 +19,7 @@ The existing code works well for calculate the current data since the data size 
 The original dataset in the excel contains of two sheet which is 2017 and 2018. Each sheet holds the stock data of the year. Table 1 below describe the summary of data used for analysis. It has 12 Ticker with 251 row data on each ticker. On the dataset there are 8 columns which are ticker, date, open, high, low, close, adj close and volume. Table 2 below will show us the mapping of data column and its usage in analysis, if the column is not present in the table, then it is not used in analysis.  
 
 |2017|2018|
+|---|---|
 |Stock Name(Ticker Name)|Data Count|Stock Name(Ticker Name)|Data Count|
 |---|---|---|---|
 |AY|251|AY|251|
