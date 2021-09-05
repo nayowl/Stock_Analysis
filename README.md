@@ -4,15 +4,15 @@
 
 ### 1.1 Background
 
-Stock analysis is a method evaluation of stocks for investor to make a buying or selling decision. The current analysis is using VBA excel to analyze green stock data ( green_stock.xlsm) in 2017 and 2018. It provides Total Daily Volume and Return of each stock in selected year. Return calculated by comparing the difference between starting and ending price to the starting price. 
+Stock analysis is a method evaluation of stocks for investor to make a buying or selling decision. The current analysis is using VBA excel to analyze green stock data in 2017 and 2018. It provides Total Daily Volume and Return of each stock in selected year. Return calculated by comparing the difference between starting and ending price to the starting price. 
 
 The existing code works well for calculate the current data since the data size is moderate. However,  the code needs improvement to calculate larger data size.  Refactoring is a disciplined technique for improving and restructuring the design of an existing code base without changing its external behavior. This project will refactor the existing code to improve the performance of the code. 
 
 ### 1.2 Purpose
 
--	To refactoring the existing stock analysis code, therefore the code will be more efficient and maintainable. 
+- To refactor the existing stock analysis code, therefore the code will be more efficient and maintainable. 
 
--	Comparing the existing code to the refactoring code to find the difference result performance. 
+- Comparing the existing code to the refactoring code to find the difference result performance. 
 
 ## 2 Results
 
@@ -48,9 +48,10 @@ The original dataset in the excel contains of two sheet which is 2017 and 2018. 
 |Close|* Starting price if it’s the first data row of each ticker, * Ending Price if it’s the last data row of each ticker|
 |Volume|To calculate total Volume|
 
-The Subroutine AllStocksAnalysis() will be used to calculate and put the data result in excel sheet. The main difference between the existing code and the refactoring code is the usage of arrays to hold volume, starting price and ending price value in the refactoring code instead of nested loop to find the value.
+The Subroutine AllStocksAnalysis() will be used to calculate and enter the data result in excel sheet. The main difference between the existing code and the refactoring code is the usage of arrays to hold volume, starting price and ending price value in the refactoring code instead of implementing nested loop to find the value.
 
-In existing code, to calculate volume and define starting and ending price, we used nested loops. 
+We used nested loops to calculate volume In existing code, as well as defining the starting and the ending price.
+
 ```
 For i = 0 To 11
             ticker = tickers(i)
@@ -85,9 +86,9 @@ For i = 0 To 11
     Next i
 
 ```
-The First loop ( For i =0 to 11)  is used to loop through the tickers. Tickers is an array that hold all the ticker name. The second loop (nested from the fist loop) (for j=2 to RowCount) is used to loop through rows in the data to find total volume, starting price, and ending price of the ticker from the first loop.  
+The First loop ( For i = 0 to 11)  is used to loop through the tickers. Tickers is an array that holds all the ticker names. The second loop (for j = 2 to RowCount) is nested from the fist loop, to loop through rows in the data to find total volume, starting price, and ending price of the ticker from the first loop.  
 
-For the refactoring code, arrays will be used to hold total volume, starting price and ending price of each ticker using ticker index.  There are no nested loops in the refactoring code. First the code creates a loop to initialize ticker volume to zero, then loop through the row using TickerIndex to access the correct index of each ticker to count total volume and define starting and ending price. The ticker index value will be added when the next row ticker doesn’t match with the current ticker
+For the refactoring code, arrays will be used to hold total volume, starting price, and ending price of each ticker using ticker index.  There are no nested loops in the refactoring code. First the code creates a loop to initialize ticker volume to zero, then loop through the row using TickerIndex to access the correct index of each ticker to count total volume and define starting and ending price. The ticker index value will be added when the next row ticker does not match with the current ticker. 
 
 ```
 '1a) Create a ticker Index
@@ -147,7 +148,7 @@ TickerIndex = 0
         Next i
 
 ```
-The performance of the code will be measured by how long it takes to execute the code. Figure 1  and Figure 2 will show us times to execute existing code  for 2017 and 2018 data. While Figure 3 and Figure 4 show execution times for the code after refactoring. For comparison between existing and refactoring code of the execution time we can see it in the Table 3. 
+The performance of the code will be measured by how long it takes to execute the code. Figure 1  and Figure 2 will show us times to execute existing code for 2017 and 2018 data. While Figure 3 and Figure 4 show execution times for the code after refactoring. The comparison between existing and refactoring code of the execution time is shown in Table 3.   
 
 
 <img width="621" alt="green_stock_2017" src="https://user-images.githubusercontent.com/88597187/131785286-4bc66fc4-dc42-4144-9f75-9d381a6824c0.png">
@@ -195,8 +196,7 @@ The performance of the code will be measured by how long it takes to execute the
 
 *The values show in this table are roundup to 3 decimals*
 
-From Table 3 we can see the positive improvement for the code after refactoring. The reduction in time for executing the code is 86.777% and 93.345%. Furthermore, the increase in performance and the multiplication shows us the code is become more efficient. There are 656.267% and 1402.564% increase in performance and the code become 7.563 and 15.026 faster than before the refactoring happened. 
-
+From Table 3, it can be concluded that there are positive improvements for the code with refactoring. The reduction in time for executing the code is 86.777% and 93.345%. Furthermore, the increment in performance and the multiplication suggests that the code is becoming more efficient. There are 656.267% and 1402.564% increase in performance and the code becomes 7.563 and 15.026 faster compared to the existing code. 
 
 ## 3 Summary
 
@@ -208,11 +208,10 @@ Advantages:
 - May increase performance
 
 Disadvantages:
-- It may introduce bugs
+- May introduce bugs
 - Takes times and expensive in budget
 - Risky if the application is too big and there is not proper test case in existing code
-- Risky if the developer does not understand what’s all about
 
 ### 3.2 Pros and Cons Refactoring Code in this Project
 
-From the result above, it’s clear that refactoring has positive impact on the existing code in this project. Its increase the performance and make the execution time faster. The factor that may lead the improvement is the usage of array instead of nested loops for calculation. For the disadvantage of the refactoring, since we only have two dataset (2017 and 2018) to compare  and doesn’t have another test case it may introduce bugs and will not work as expected.
+Based on the result above, it is clarified that refactoring will contribute positively to the existing code in this project. It increases the performance and generates faster execution time. The factor that may lead to the improvement is the usage of array instead of nested loops for calculation. The disadvantage of refactoring, however, is the possibility of bugs occurrence and not working as expected, since we only have two dataset (2017 and 2018) to compare and no further test case is available.
