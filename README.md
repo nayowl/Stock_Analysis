@@ -88,7 +88,7 @@ For i = 0 To 11
 ```
 The First loop ( For i = 0 to 11)  is used to loop through the tickers. Tickers is an array that holds all the ticker names. The second loop (for j = 2 to RowCount) is nested from the fist loop, to loop through rows in the data to find total volume, starting price, and ending price of the ticker from the first loop.  
 
-For the refactoring code, arrays will be used to hold total volume, starting price, and ending price of each ticker using ticker index.  There are no nested loops in the refactoring code. First the code creates a loop to initialize ticker volume to zero, then loop through the row using TickerIndex to access the correct index of each ticker to count total volume and define starting and ending price. The ticker index value will be added when the next row ticker does not match with the current ticker. 
+For the refactoring code, arrays will be used to hold total volume, starting price, and ending price of each ticker using TickerIndex.  There are no nested loops in the refactoring code. First the code creates a loop to initialize ticker volume to zero, then loop through the row using TickerIndex to access the correct index of each ticker to count total volume and define starting and ending price. The TickerIndex value will be added when the next row ticker does not match with the current ticker. 
 
 ```
 '1a) Create a ticker Index
